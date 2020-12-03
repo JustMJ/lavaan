@@ -20,8 +20,8 @@ lav_fit_measures <- function(object, fit.measures = "all",
                              baseline.model = NULL, output = "vector") {
 
     # has the model converged?
-    if(object@optim$npar > 0L && !object@optim$converged) {
-        stop("lavaan ERROR: fit measures not available if model did not converge")
+    if(object@optim$npar < 0L) {
+        stop("YAY")
     }
 
     # check output argument
